@@ -49,3 +49,55 @@ print("New tuple:", my_tuple)
     ```
 
     The memory address id changes after concatenatio, this proves it created a new tuple instead of modifying the old one.
+
+  ##Explain why these operations are not legal
+   ```python
+x = (1,2,3,4)
+x.append(1)
+x[1] = "hello"
+del x[2]
+       ```
+ These operations are not legal because tuples are immutable.
+
+
+ Packing and unpacking tuples
+   ```python
+
+ (one, two, three, four) = (1, 2, 3, 4)
+
+    ```
+    What is the data type of each variable?
+    All variables one, two, three, four and are integers (int).
+
+    Extended unpacking
+   ```python
+    x = (1, 2, 3, 4)
+a, b, *c = x
+
+print(a, b, c)
+   ```
+Output
+   1 2 [3.4]
+
+
+   What will be the result of a, *b, c = x?
+   ```python
+   x = (1, 2, 3, 4)
+a, *b, c = x
+
+print(a, b, c)
+
+      ```
+
+      Memory management
+  ```python
+      my_x = [100,200,300,400]
+my_y = (200,300,400,500)
+  ```
+
+  Challenges
+
+One challenge was understanding why tuples cannot be modified and how immutability affects memory.
+Another challenge was seeing how unpacking with * works and why it creates a list instead of a tuple.
+Also, understanding memory addresses using id() helped me realize that concatenating tuples creates a new object instead of modifying the original one.
+At first I confused list behavior with tuple behavior, but after testing examples I understood the difference better.
